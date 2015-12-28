@@ -44,6 +44,7 @@ void addToTail(List* list, int value)
 	element->value = value;
 	temp->next = element;
 	element->next = nullptr;
+	++list->numberOfElements;
 }
 
 ///Returns head of the list
@@ -60,6 +61,21 @@ int getHeadValue(List* list)
 int getNumberOfElements(List* list)
 {
 	return list->numberOfElements;
+}
+
+int getValue(List* list, int i)
+{
+	ListElement* temp = list->head;
+	int j = 0;
+	while (temp != nullptr)
+	{
+		if (j == i)
+		{
+			return temp->value;
+		}
+		++j;
+		temp = temp->next;
+	}
 }
 
 bool isEmpty(List* list)

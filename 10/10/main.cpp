@@ -17,34 +17,31 @@ int main()
 	int	citiesNumber = 0;
 	int roadsNumber = 0;
 	int capitalsNumber = 0;
-	while (!file.eof())
+	file >> citiesNumber; 
+	Graph* graph = createGraph(citiesNumber);
+	file >> roadsNumber; 
+	for (int i = 0; i < roadsNumber; ++i)
 	{
-		file >> citiesNumber; 
-		Graph* graph = createGraph(citiesNumber);
-		file >> roadsNumber; 
-		for (int i = 0; i < roadsNumber; ++i)
-		{
-			int vertex1 = 0;
-			int vertex2 = 0;
-			int roadLength = 0;
-			file >> vertex1; 
-			file >> vertex2;
-			file >> roadLength;
-			setWeight(graph, vertex1, vertex2, roadLength);
-		}
-		file >> capitalsNumber; 
-		ArrayOfLists* countries = createArrayOfLists(capitalsNumber);
-		for (int i = 0; i < capitalsNumber; ++i)
-		{
-			int capital = 0;
-			file >> capital; 
-			addNewCapital(countries, capital);
-		}
-		createCountries(countries, graph);
-		printArrayOfLists(countries);
-		deleteArrayOfLists(countries);
-		deleteGraph(graph);
+		int vertex1 = 0;
+		int vertex2 = 0;
+		int roadLength = 0;
+		file >> vertex1; 
+		file >> vertex2;
+		file >> roadLength;
+		setWeight(graph, vertex1, vertex2, roadLength);
 	}
+	file >> capitalsNumber; 
+	ArrayOfLists* countries = createArrayOfLists(capitalsNumber);
+	for (int i = 0; i < capitalsNumber; ++i)
+	{
+		int capital = 0;
+		file >> capital; 
+		addNewCapital(countries, capital);
+	}
+	createCountries(countries, graph);
+	printArrayOfLists(countries);
+	deleteArrayOfLists(countries);
+	deleteGraph(graph);
 	file.close();
 	return 0;
 }

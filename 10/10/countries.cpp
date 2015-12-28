@@ -49,21 +49,29 @@ void createCountries(ArrayOfLists* countries, Graph* graph)
 	int i = 0; /// we are examining the first capital 
 	while (numberOfFreeCities > 0)
 	{
-		int capital = getHeadValue(countries->array[i]);
 		int shortestRoad = INT_MAX;
+		int cityToAdd = 0;
 		for (int j = 1; j <= numberOfCities; ++j) /// examining all cities. current city is the city number 'j'
 		{
-			int road = getWeight(graph, capital, j);
-			if (road < shortestRoad && hasEdge(graph, capital, j) && freeCities[j - 1] == true) /// looking for the closest city
-				  /// which must have a road to the capital (and be not the same city)
-				 	/// and must be	free				
+			if (freeCities[j - 1])
 			{
-				shortestRoad = road;
-				freeCities[j - 1] = false; /// this city is not free any more
-				--numberOfFreeCities; /// decreasing number of unlinked cities
-				addToTail(countries->array[i], j); /// adding the city to the country with given capital 
-				break;
+				for (int l = 0; l < getNumberOfElements(countries->array[i]); ++l)
+				{
+					int temp = getValue(countries->array[i], l);
+					int road = getWeight(graph, temp, j);
+					if (road < shortestRoad && road != 0)
+					{
+						shortestRoad = road;
+						cityToAdd = j;
+					}
+				}
 			}
+		}
+		if (cityToAdd != 0)
+		{
+			freeCities[cityToAdd - 1] = false; /// this city is not free any more
+			--numberOfFreeCities; /// decreasing number of unlinked cities
+			addToTail(countries->array[i], cityToAdd); /// adding the city to the country with given capital 
 		}
 		++i; /// go to the next capital
 		if (i == countries->capitalsNumber) /// if this is the last capital
