@@ -1,0 +1,5 @@
+/home/julia/Documents/hw1/hw1/hw1/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/julia/Documents/hw1/hw1/hw1/bin/Debug/hw1.exe.mdb
+/home/julia/Documents/hw1/hw1/hw1/bin/Debug/hw1.exe
+/home/julia/Documents/hw1/hw1/hw1/obj/x86/Debug/hw1.exe
+/home/julia/Documents/hw1/hw1/hw1/obj/x86/Debug/hw1.exe.mdb
