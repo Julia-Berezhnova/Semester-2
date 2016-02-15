@@ -1,0 +1,5 @@
+/home/julia/Documents/hw3/hw1_3/hw1_3/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/julia/Documents/hw3/hw1_3/hw1_3/bin/Debug/hw1_3.exe.mdb
+/home/julia/Documents/hw3/hw1_3/hw1_3/bin/Debug/hw1_3.exe
+/home/julia/Documents/hw3/hw1_3/hw1_3/obj/x86/Debug/hw1_3.exe
+/home/julia/Documents/hw3/hw1_3/hw1_3/obj/x86/Debug/hw1_3.exe.mdb
