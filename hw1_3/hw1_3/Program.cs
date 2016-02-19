@@ -4,7 +4,7 @@ namespace hw1_3
 {
 	class MainClass
 	{
-		private static void InsertationSort(int[] array)
+		private static void InsertationSort(int[] array) // executes a sortation of the given integer numbers array (from the smalles to the biggest)
 		{
 			for (int i = 1; i < array.Length; i++)
 			{
@@ -18,13 +18,14 @@ namespace hw1_3
 				array[j] = key;
 			}
 		}
+
 		public static void Main (string[] args)
 		{
 			string[] someString = Console.ReadLine().Split(' ');
 			int[] numbers = new int[someString.Length];
 			for (int i = 0; i < someString.Length; ++i) 
 			{
-				int number;
+				int number = 0;
 				if (Int32.TryParse(someString[i],out number))
 				{
 					numbers [i] = number;
