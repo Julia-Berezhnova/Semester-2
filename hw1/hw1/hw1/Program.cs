@@ -4,7 +4,7 @@ namespace hm1_1
 {
 	class MainClass
 	{
-		private static uint Factorial(uint number)
+		private static uint Factorial(uint number) // method that allows to count factorial (number)
 		{
 			if (number == 0 || number == 1) 
 			{
@@ -12,10 +12,11 @@ namespace hm1_1
 			}
 			return number * Factorial (number - 1);
 		}
-		public static void Main (string[] args)
+
+		public static void Main (string[] args) 
 		{
 			Console.WriteLine ("Enter a positive integer number:");
-			uint number;
+			uint number = 0;
 			string someString = Console.ReadLine();
 			if (UInt32.TryParse (someString, out number)) 
 			{
@@ -26,6 +27,7 @@ namespace hm1_1
 				Console.WriteLine ("Incorrect input");
 			}
 		}
+
 	}
 }
 
