@@ -4,7 +4,7 @@ namespace hm1_2
 {
 	class MainClass
 	{
-		private static uint Fibonacchi(uint number)
+		private static uint Fibonacchi(uint number) // method that allows to calculate a Fibonacci's sequence member under the given number
 		{
 			if (number == 0 || number == 1) 
 			{
@@ -12,6 +12,7 @@ namespace hm1_2
 			}
 			return Fibonacchi(number - 1) + Fibonacchi(number - 2);
 		}
+
 		public static void Main (string[] args)
 		{
 			Console.WriteLine ("Enter a positive integer number:");
@@ -26,6 +27,7 @@ namespace hm1_2
 				Console.WriteLine ("Incorrect input");
 			}
 		}
+
 	}
 }
 
