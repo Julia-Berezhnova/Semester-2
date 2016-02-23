@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="hw2_4/hw2_4.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="hw2_4/Stack.cs">
+    <Files>
+      <File FileName="hw2_4/Program.cs" Line="27" Column="48" />
+      <File FileName="hw2_4/IStack.cs" Line="1" Column="1" />
+      <File FileName="hw2_4/ICalculator.cs" Line="1" Column="1" />
+      <File FileName="hw2_4/Calculator.cs" Line="1" Column="1" />
+      <File FileName="hw2_4/Stack.cs" Line="18" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
