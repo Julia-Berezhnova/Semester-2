@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="hw2_3/hw2_3.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="hw2_3/Program.cs">
+    <Files>
+      <File FileName="hw2_3/Program.cs" Line="24" Column="22" />
+      <File FileName="hw2_3/IList.cs" Line="6" Column="34" />
+      <File FileName="hw2_3/List.cs" Line="71" Column="6" />
+      <File FileName="hw2_3/IHashTable.cs" Line="11" Column="74" />
+      <File FileName="hw2_3/HashTable.cs" Line="8" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
