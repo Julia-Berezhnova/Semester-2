@@ -1,28 +1,44 @@
-﻿namespace NamespaceICalculator
+﻿namespace Calculator
 {
+	/// <summary>
+	/// Interface of a calculator
+	/// </summary>
 	interface ICalculator
 	{
-		// Adds two values to the stack, 
-		// places result back on stack.
+		/// <summary>
+		/// Adds two values to the stack, 
+		/// places result back on stack.
+		/// </summary>
 		void Add();
 
-		// Subtracts two values on the top of the stack, 
-		// places result back on stack.
+		/// <summary>
+		/// Subtracts two values on the top of the stack, 
+		/// places result back on stack.
+		/// </summary>
 		void Subtract();
 
-		// Multiplies two values on the top of the stack, 
-		// places result back on stack.
+		/// <summary>
+		/// Multiplies two values on the top of the stack, 
+		/// places result back on stack.
+		/// </summary>
 		void Multiply();
 
-		// Divides two values on the top of the stack, 
-		// places result back on stack.
+		/// <summary>
+		/// Divides two values on the top of the stack, 
+		/// places result back on stack.
+		/// </summary>
 		void Divide();
 
-		// Returns true if new value is successfully added to the stack
-		// false - if there is some mistake
+		/// <summary>
+		/// Returns true if new value is successfully added to the stack
+		/// false - if there is some mistake
+		/// </summary>
+		/// <param name="value">Value to add to the stack.</param>
 		bool Push(int value);
 
-		// Returns the result of expression
+		/// <summary>
+		/// Returns the result of expression
+		/// </summary>
 		int Result();
 	}
 }

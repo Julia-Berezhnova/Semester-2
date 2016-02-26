@@ -31,6 +31,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <Package>nunit</Package>
+    </Reference>
+    <Reference Include="nunit-console-runner, Version=2.6.3.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Package>nunit</Package>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -38,7 +44,10 @@
     <Compile Include="IStack.cs" />
     <Compile Include="ICalculator.cs" />
     <Compile Include="Calculator.cs" />
-    <Compile Include="Stack.cs" />
+    <Compile Include="ArrayStack.cs" />
+    <Compile Include="ListStack.cs" />
+    <Compile Include="AbstractStack.cs" />
+    <Compile Include="hw2_4Test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,19 +1,32 @@
-﻿namespace NamespaceIStack
+﻿namespace Stacks
 {
+	/// <summary>
+	/// Interface of a stack
+	/// </summary>
 	interface IStack
 	{
-		// returns true if stack is empty, otherwise it's false
+		/// <summary>
+		/// Returns true if stack is empty, otherwise it's false
+		/// </summary>
+		/// <returns><c>true</c>, if empty was ised, <c>false</c> otherwise.</returns>
 		bool isEmpty ();
 
-		// returns true if element is added, and false if stack is going to get overloaded
+		/// <summary>
+		/// Returns true if element is added, and false if stack is going to get overloaded
+		/// </summary>
+		/// <param name="element">Element needed to be added to the stack.</param>
 		bool Push (int element);
 
-		// returns the last added element, deletes it from the stack
-		// warning: one should check if the stack is not empty before this operation
+		/// <summary>
+		/// returns the last added element, deletes it from the stack
+		/// WARNING: one should check if the stack is not empty before this operation
+		/// </summary>
 		int Pop ();
 
-		// returns value from the top of the stack
-		// warning: one should check if the stack is not empty before this operation
+		/// <summary>
+		/// Returns value from the top of the stack
+		/// WARNING: one should check if the stack is not empty before this operation
+		/// </summary>
 		int Top();
 	}
 }

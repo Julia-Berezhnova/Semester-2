@@ -1,13 +1,15 @@
-﻿using NamespaceICalculator;
-using NamespaceIStack;
+﻿using Stacks;
 
-namespace NamespaceCalculator
+namespace Calculator
 {
-	class Calculator
+	/// <summary>
+	/// Class calculator based on stack
+	/// </summary>
+	class StackCalculator: ICalculator
 	{
 		private IStack stack;
 
-		public Calculator(IStack stack)
+		public StackCalculator(IStack stack)
 		{
 			this.stack = stack;
 		}
@@ -49,7 +51,6 @@ namespace NamespaceCalculator
 		{
 			return this.stack.Top ();
 		}
-
 	}
 }
 
