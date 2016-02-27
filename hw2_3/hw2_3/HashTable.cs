@@ -1,5 +1,4 @@
-﻿using NamespaceIHashTable;
-using NamespaceList;
+﻿using NamespaceList;
 
 namespace NamespaceHashTable
 {

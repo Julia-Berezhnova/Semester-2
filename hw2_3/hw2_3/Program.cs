@@ -3,7 +3,7 @@ using NamespaceHashTable;
 
 namespace hw1_3
 {
-	class MainClass
+	class Program
 	{
 		public static void Main (string[] args)
 		{

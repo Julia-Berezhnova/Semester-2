@@ -1,42 +1,66 @@
-﻿using NamespaceIList;
-
-namespace NamespaceList
+﻿namespace NamespaceList
 {
+	/// <summary>
+	/// Class list. Operations: add, delete, ckeck belonging
+	/// </summary>
 	class List: IList
 	{
 		private int listSize = 0;
-		private listElement head = null;
 
-		private class listElement
+		private ListElement head = null;
+
+		private class ListElement
 		{
-			public string value = "";
-			public listElement next = null;
+			private string value = "";
+
+			private ListElement next = null;
+
+			public void SetValue (string value)
+			{
+				this.value = value;
+			}
+
+			public void SetNext (ListElement element)
+			{
+				this.next = element;
+			}
+
+			public string GetValue ()
+			{
+				return this.value;
+			}
+
+			public ListElement GetNext()
+			{
+				return this.next;
+			}
 		}
 
 		public void addElement(string element)
 		{
 			if (this.head == null) 
 			{
-				this.head = new listElement ();
-				this.head.value = element;
-				this.head.next = null;
+				this.head = new ListElement ();
+				this.head.SetValue(element);
+				this.head.SetNext(null);
 			}
-			else if (this.head.next == null)
+			else if (this.head.GetNext() == null)
 			{
-				this.head.next = new listElement ();
-				this.head.next.value = element;
-				this.head.next.next = null;
+				ListElement newElement = new ListElement ();
+				this.head.SetNext(newElement);
+				(this.head.GetNext ()).SetValue (element);
+				(this.head.GetNext ()).SetNext (null);
 			}	
 			else
 			{
-				listElement temp = this.head;
-				while (temp.next != null) 
+				ListElement temp = this.head;
+				while (temp.GetNext() != null) 
 				{
-					temp = temp.next;
+					temp = temp.GetNext();
 				}
-				temp.next = new listElement ();
-				temp.next.value = element;
-				temp.next.next = null;
+				temp.SetNext(new ListElement ());
+				(temp.GetNext()).SetValue(element);
+				(temp.GetNext()).SetNext(null);
 			}
 			++this.listSize;
 		}
@@ -56,17 +80,17 @@ namespace NamespaceList
 			{
 				return false;
 			}
-			listElement temp = this.head;
-			if (temp.value == element) 
+			ListElement temp = this.head;
+			if (temp.GetValue() == element) 
 			{
-				this.head = this.head.next;
+				this.head = this.head.GetNext();
 				return true;
 			}
-			if (temp.next != null) 
+			if (temp.GetNext() != null) 
 			{
-				if (temp.next.value == element)
+				if ((temp.GetNext()).GetValue() == element)
 				{
-					this.head.next = this.head.next.next;
+					this.head.SetNext((this.head.GetNext()).GetNext());
 					return true;
 				}
 			}
@@ -74,28 +98,28 @@ namespace NamespaceList
 			{
 				return false;
 			}
-			while (temp.next != null) 
+			while (temp.GetNext() != null) 
 			{
-				if (temp.next.value == element) 
+				if ((temp.GetNext()).GetValue() == element) 
 				{
-					temp.next = temp.next.next;
+					temp.SetNext((temp.GetNext()).GetNext());
 					return true;
 				}
-				temp = temp.next;
+				temp = temp.GetNext();
 			}
 			return false;
 		}
 
 		public bool isIn(string element)
 		{
-			listElement temp = this.head;
+			ListElement temp = this.head;
 			while (temp != null) 
 			{
-				if (temp.value == element) 
+				if (temp.GetValue() == element) 
 				{
 					return true;
 				}
-				temp = temp.next;
+				temp = temp.GetNext();
 			}
 			return false;
 		}
