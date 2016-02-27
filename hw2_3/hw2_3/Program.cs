@@ -1,7 +1,7 @@
 ﻿using System;
 using NamespaceHashTable;
 
-namespace hw1_3
+namespace hw2_3
 {
 	class Program
 	{
