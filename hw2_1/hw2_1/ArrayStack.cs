@@ -27,26 +27,19 @@
 		{
 			for (int i = 0; i < maxElementsNumber; ++i)
 			{
-				this.array[i] = 0; // just in case
+				// just in case
+				this.array[i] = 0; 
 			}
-			currentSize = 0; // just in case
+			// just in case
+			currentSize = 0; 
 		}
 
 		/// <summary>
 		/// Returns true if stack is empty, otherwise it's false
 		/// </summary>
 		/// <returns><c>true</c>, if empty was ised, <c>false</c> otherwise.</returns>
-		public bool isEmpty() 
-		{
-			if (this.currentSize == 0) 
-			{
-				return true;
-			} 
-			else 
-			{
-				return false;
-			}	
-		}
+		public bool IsEmpty()  => this.currentSize == 0;
+		
 
 		/// <summary>
 		/// Returns true if element is added, and false if stack is going to get overloaded
