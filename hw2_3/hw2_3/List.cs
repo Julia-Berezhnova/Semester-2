@@ -5,92 +5,101 @@
 	/// </summary>
 	class List: IList
 	{
-		private int listSize = 0;
+		private int listSize;
 
-		private ListElement head = null;
+		private ListElement head;
 
 		private class ListElement
 		{
-			private string value = "";
+			private string value;
 
-			private ListElement next = null;
+			private ListElement next;
 
-			public void SetValue (string value)
+			public ListElement()
+			{
+				this.value = "";
+				this.next = null;
+			}
+
+			public ListElement(string value)
 			{
 				this.value = value;
+				this.next = null;
 			}
 
-			public void SetNext (ListElement element)
+			public ListElement(string value, ListElement next)
 			{
-				this.next = element;
+				this.value = value;
+				this.next = next;
 			}
 
-			public string GetValue ()
+			public string Value
 			{
-				return this.value;
+				get
+				{
+					return this.value;
+				}
+				set 
+				{
+					this.value = value;
+				}
 			}
 
-			public ListElement GetNext()
+			public ListElement Next
 			{
-				return this.next;
+				get
+				{
+					return this.next;
+				}
+				set
+				{
+					this.next = value;
+				}
 			}
 		}
 
-		public void addElement(string element)
+		public void AddElement(string element)
 		{
 			if (this.head == null) 
 			{
-				this.head = new ListElement ();
-				this.head.SetValue(element);
-				this.head.SetNext(null);
+				this.head = new ListElement (element);
 			}
-			else if (this.head.GetNext() == null)
+			else if (this.head.Next == null)
 			{
-				ListElement newElement = new ListElement ();
-				this.head.SetNext(newElement);
-				(this.head.GetNext ()).SetValue (element);
-				(this.head.GetNext ()).SetNext (null);
+				this.head.Next = new ListElement (element);
 			}	
 			else
 			{
 				ListElement temp = this.head;
-				while (temp.GetNext() != null) 
+				while (temp.Next != null) 
 				{
-					temp = temp.GetNext();
+					temp = temp.Next;
 				}
-				temp.SetNext(new ListElement ());
-				(temp.GetNext()).SetValue(element);
-				(temp.GetNext()).SetNext(null);
+				temp.Next = new ListElement (element);
 			}
 			++this.listSize;
 		}
 
-		public bool isEmpty()
-		{
-			if (this.head == null)
-			{
-				return true;
-			}
-			return false;
-		}
+		public bool IsEmpty() =>  this.head == null;
 
-		public bool deleteElement(string element)
+		public bool DeleteElement(string element)
 		{
-			if (this.isEmpty ()) 
+			if (this.IsEmpty ()) 
 			{
 				return false;
 			}
+
 			ListElement temp = this.head;
-			if (temp.GetValue() == element) 
+			if (temp.Value == element) 
 			{
-				this.head = this.head.GetNext();
+				this.head = this.head.Next;
 				return true;
 			}
-			if (temp.GetNext() != null) 
+			if (temp.Next != null) 
 			{
-				if ((temp.GetNext()).GetValue() == element)
+				if (temp.Next.Value == element)
 				{
-					this.head.SetNext((this.head.GetNext()).GetNext());
+					this.head.Next =  this.head.Next.Next;
 					return true;
 				}
 			}
@@ -98,31 +107,31 @@
 			{
 				return false;
 			}
-			while (temp.GetNext() != null) 
+
+			while (temp.Next != null) 
 			{
-				if ((temp.GetNext()).GetValue() == element) 
+				if (temp.Next.Value == element)
 				{
-					temp.SetNext((temp.GetNext()).GetNext());
+					temp.Next = temp.Next.Next;
 					return true;
 				}
-				temp = temp.GetNext();
+				temp = temp.Next;
 			}
 			return false;
 		}
 
-		public bool isIn(string element)
+		public bool IsIn(string element)
 		{
 			ListElement temp = this.head;
 			while (temp != null) 
 			{
-				if (temp.GetValue() == element) 
+				if (temp.Value == element) 
 				{
 					return true;
 				}
-				temp = temp.GetNext();
+				temp = temp.Next;
 			}
 			return false;
 		}
-
 	}
 }

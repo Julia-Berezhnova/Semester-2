@@ -24,13 +24,13 @@ namespace hw2_3
 					switch (choice) 
 					{
 					case 1:
-						Console.WriteLine(myHashTable.exists (Console.ReadLine ()));
+						Console.WriteLine(myHashTable.Exists (Console.ReadLine ()));
 						break;
 					case 2:
-						myHashTable.addValue (Console.ReadLine ());
+						myHashTable.AddValue (Console.ReadLine ());
 						break;
 					case 3:
-						if (myHashTable.deleteValue (Console.ReadLine ())) 
+						if (myHashTable.DeleteValue (Console.ReadLine ())) 
 						{
 							Console.WriteLine ("Element is deleted");
 						}

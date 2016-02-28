@@ -8,33 +8,43 @@ namespace hw2_3
 	[TestFixture ()]
 	public class hw2_3Test
 	{
-		private HashTable myHashTable = new HashTable ();
-
 		[Test ()]
-		public void HashTableTestCase ()
+		public void Exists ()
 		{
-			myHashTable.addValue ("hello");
-			Assert.AreEqual(true, myHashTable.exists("hello"));
-			myHashTable.deleteValue ("hello");
+			HashTable myHashTable = new HashTable ();
+			myHashTable.AddValue ("hello");
+			Assert.AreEqual(true, myHashTable.Exists("hello"));
 		}
 
 		[Test ()]
-		public void HashTableTestCase2 ()
+		public void DoesntExist ()
 		{
-			Assert.AreEqual(false, myHashTable.exists("hello"));
+			HashTable myHashTable = new HashTable ();
+			Assert.AreEqual(false, myHashTable.Exists("hello"));
 		}
 
 		[Test ()]
-		public void HashTableTestCase3 ()
+		public void DeleteValue ()
 		{
-			myHashTable.addValue ("sdbgkjsgfskfjnbsf,gmbnfsgbsfgjbnrtbkjadfvjwrblhygwtlekjbg;qkejrbfdnfbvsmngv ae;erjgejgbjtrhvbgmd fveqjrgfq;owrfgqoreihgeqjbgvkdnfvm,nqegforewgftwrf");
-			Assert.AreEqual (true, myHashTable.exists ("sdbgkjsgfskfjnbsf,gmbnfsgbsfgjbnrtbkjadfvjwrblhygwtlekjbg;qkejrbfdnfbvsmngv ae;erjgejgbjtrhvbgmd fveqjrgfq;owrfgqoreihgeqjbgvkdnfvm,nqegforewgftwrf"));
+			HashTable myHashTable = new HashTable ();
+			myHashTable.AddValue ("sdbgkjsgfskfjnbsf,gmbnfsgbsfgjbnrtbkjadfvjwrblhygwtlekjbg;qkejrbfdnfbvsmngv ae;erjgejgbjtrhvbgmd fveqjrgfq;owrfgqoreihgeqjbgvkdnfvm,nqegforewgftwrf");
+			Assert.AreEqual (true, myHashTable.Exists ("sdbgkjsgfskfjnbsf,gmbnfsgbsfgjbnrtbkjadfvjwrblhygwtlekjbg;qkejrbfdnfbvsmngv ae;erjgejgbjtrhvbgmd fveqjrgfq;owrfgqoreihgeqjbgvkdnfvm,nqegforewgftwrf"));
+			Assert.AreEqual (true, myHashTable.DeleteValue ("sdbgkjsgfskfjnbsf,gmbnfsgbsfgjbnrtbkjadfvjwrblhygwtlekjbg;qkejrbfdnfbvsmngv ae;erjgejgbjtrhvbgmd fveqjrgfq;owrfgqoreihgeqjbgvkdnfvm,nqegforewgftwrf"));
 		}
 
 		[Test ()]
-		public void HashTableTestCase4 ()
+		public void LastTest ()
 		{
-			Assert.AreEqual (false, myHashTable.deleteValue ("bye"));
+			HashTable myHashTable = new HashTable ();
+			Assert.AreEqual (false, myHashTable.DeleteValue ("bye"));
+			myHashTable.AddValue ("i don't know");
+			myHashTable.AddValue ("what");
+			myHashTable.AddValue ("to");
+			myHashTable.AddValue ("write");
+			Assert.AreEqual (true, myHashTable.DeleteValue ("what"));
+			Assert.AreEqual (false, myHashTable.DeleteValue ("what"));
+			Assert.AreEqual (false, myHashTable.DeleteValue("what"));
+			Assert.AreEqual (true, myHashTable.DeleteValue ("to"));
 		}
 	}
 }

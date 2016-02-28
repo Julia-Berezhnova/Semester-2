@@ -2,6 +2,9 @@
 
 namespace NamespaceHashTable
 {
+	/// <summary>
+	/// Hash table.
+	/// </summary>
 	class HashTable: IHashTable
 	{
 		private const int arraySize = 100;
@@ -15,7 +18,7 @@ namespace NamespaceHashTable
 			}
 		}
 
-		private int hashFunction(string element)
+		private int HashFunction(string element)
 		{
 			int result = 0;
 			for (int i = 0; i < element.Length; ++i) 
@@ -25,19 +28,19 @@ namespace NamespaceHashTable
 			return result / arraySize;
 		}
 
-		public void addValue(string element)
+		public void AddValue(string element)
 		{
-			this.array [hashFunction (element)].addElement(element);
+			this.array [HashFunction (element)].AddElement(element);
 		}
 
-		public bool deleteValue(string element)
+		public bool DeleteValue(string element)
 		{
-			return this.array [hashFunction (element)].deleteElement (element);
+			return this.array [HashFunction (element)].DeleteElement (element);
 		}
 
-		public bool exists(string element)
+		public bool Exists(string element)
 		{
-			return this.array [hashFunction (element)].isIn (element);
+			return this.array [HashFunction (element)].IsIn (element);
 		}
 
 	}
