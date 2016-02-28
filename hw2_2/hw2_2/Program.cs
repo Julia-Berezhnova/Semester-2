@@ -7,9 +7,9 @@ namespace List
 		public static void Main (string[] args)
 		{
 			List myList = new List ();
-			myList.addElement (12);
-			Console.WriteLine (myList.deleteElement (12));
-			Console.WriteLine (myList.deleteElement (13));
+			myList.AddElement (12);
+			Console.WriteLine (myList.DeleteElement (12));
+			Console.WriteLine (myList.DeleteElement (13));
 		}
 	}
 }
