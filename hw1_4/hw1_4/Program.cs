@@ -19,10 +19,15 @@ namespace hw1_4
 				Console.WriteLine ();
 			}
 		}
+
 		private static void PrintArray(int[,] array)
 		{
+			if (array.GetLength (0) != array.GetLength (1)) 
+			{
+				Console.WriteLine ("Incorrect input. The matrix must be square");
+			}
 			int i = array.GetLength (0) / 2;
-			int j = array.GetLength (0) / 2;
+			int j = array.GetLength (1) / 2;
 			int step = 1;
 			while (true) 
 			{
@@ -58,6 +63,7 @@ namespace hw1_4
 				++step;
 			}
 		}
+
 		public static void Main (string[] args)
 		{
 			Console.WriteLine ("Enter a dimension (odd number):");
@@ -67,7 +73,7 @@ namespace hw1_4
 					Console.WriteLine ("Incorrect input");
 					return;
 				}
-			if ((dimension / 2) * 2 == dimension) 
+			if (dimension % 2 == 0) 
 			{
 				Console.WriteLine ("Incorrect input");
 				return;
