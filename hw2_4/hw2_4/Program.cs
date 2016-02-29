@@ -1,6 +1,5 @@
 ﻿using System;
 using Stacks;
-using Calculator;
 
 namespace hw2_4
 {

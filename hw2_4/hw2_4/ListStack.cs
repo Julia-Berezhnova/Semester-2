@@ -3,75 +3,79 @@
 	/// <summary>
 	/// Class stack as a list
 	/// </summary>
-	class ListStack: Stack
+	class ListStack: IStack
 	{
-		private ListElement head = null;
+		private int currentSize;
+
+		private ListElement head;
+
+		public ListStack()
+		{
+			this.currentSize = 0;
+			this.head = null;
+		}
 
 		private class ListElement
 		{
 			private int value;
 
-			private ListElement next = null;
+			private ListElement next;
 
-			public void SetValue (int value)
+			public ListElement(int value, ListElement next)
 			{
 				this.value = value;
+				this.next = next;
 			}
 
-			public void SetNext (ListElement element)
+			public int Value
 			{
-				this.next = element;
+				get
+				{
+					return this.value;
+				}
+				set 
+				{
+					this.value = value;
+				}
 			}
 
-			public int GetValue ()
+			public ListElement Next
 			{
-				return this.value;
+				get
+				{
+					return this.next;
+				}
+				set
+				{
+					this.next = value;
+				}
 			}
-
-			public ListElement GetNext()
-			{
-				return this.next;
-			}
-
 		}
 
-		public override bool Push(int element)
+		public bool Push(int element)
 		{
-			if (this.currentSize < maxElementsNumber) 
+			ListElement newElement = new ListElement (element, this.head);
+			this.head = newElement;
+			++this.currentSize;
+			return true;
+		}
+
+		public bool IsEmpty() => this.head == null;
+
+		public int Pop()
+		{
+			if (!this.IsEmpty ()) 
 			{
-				ListElement newElement = new ListElement ();
-				newElement.SetValue(element);
-				newElement.SetNext(this.head);
-				this.head = newElement;
-				++this.currentSize;
-				return true;
-			}
-			else
+				int result = this.head.Value;
+				this.head = this.head.Next;
+				return result;
+			} 
+			else 
 			{
-				return false;
+				return int.MinValue;
 			}
 		}
 
-		public override bool isEmpty()
-		{
-			if (this.head == null)
-			{
-				return true;
-			}
-			return false;
-		}
-
-		public override int Pop()
-		{
-			int result = this.head.GetValue();
-			this.head = this.head.GetNext();
-			return result;
-		}
-
-		public override int Top()
-		{
-			return this.head.GetValue();
-		}
+		public int Top() => this.head.Value;
 	}
 }
-

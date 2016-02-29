@@ -1,11 +1,9 @@
-﻿using Stacks;
-
-namespace Calculator
+﻿namespace Stacks
 {
 	/// <summary>
 	/// Class calculator based on stack
 	/// </summary>
-	class StackCalculator: ICalculator
+	class StackCalculator
 	{
 		private IStack stack;
 
@@ -53,4 +51,3 @@ namespace Calculator
 		}
 	}
 }
-

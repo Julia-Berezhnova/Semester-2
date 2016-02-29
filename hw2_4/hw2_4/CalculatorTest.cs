@@ -1,38 +1,30 @@
 ﻿using NUnit.Framework;
-using hw2_4;
 using Stacks;
-using Calculator;
 using System;
 
 namespace hw2_4
 {
 	[TestFixture ()]
-	public class hw2_4Test
+	public class CalculatorTest
 	{
-		[Test ()]
-		public void ArrayStackPushCase()
+		[SetUp ()]
+		public void Generate_ArrayStackCalc ()
 		{
 			ArrayStack myStack = new ArrayStack ();
-			for (var i = 0; i < 100; ++i) 
-			{
-				Assert.AreEqual (true, myStack.Push (i));
-			}
-			Assert.AreEqual (false, myStack.Push (100));
+			StackCalculator myCalculator = new StackCalculator(myStack);
+			Assert.AreEqual (false, myCalculator.Result ());
 		}
 
 		[Test ()]
-		public void ListStackPushCase()
+		public void Generate_ListStackCalc ()
 		{
 			ListStack myStack = new ListStack ();
-			for (var i = 0; i < 100; ++i) 
-			{
-				Assert.AreEqual (true, myStack.Push (i));
-			}
-			Assert.AreEqual (false, myStack.Push (100));
+			StackCalculator myCalculator = new StackCalculator(myStack);
+			Assert.AreEqual (false, myCalculator.Result ());
 		}
 
 		[Test ()]
-		public void ArrayStack_and_CaluculatorCase ()
+		public void ArrayStack_Caluculator_Add ()
 		{
 			ArrayStack myStack = new ArrayStack ();
 			StackCalculator myCalculator = new StackCalculator(myStack);
@@ -43,7 +35,7 @@ namespace hw2_4
 		}
 
 		[Test ()]
-		public void ArrayStack_and_CaluculatorCase2 ()
+		public void ArrayStack_Caluculator_Divide ()
 		{
 			ArrayStack myStack = new ArrayStack ();
 			StackCalculator myCalculator = new StackCalculator(myStack);
@@ -54,18 +46,18 @@ namespace hw2_4
 		}
 
 		[Test ()]
-		public void ArrayStack_and_CaluculatorCase3 ()
+		public void ArrayStack_Caluculator_Subtract ()
 		{
 			ArrayStack myStack = new ArrayStack ();
 			StackCalculator myCalculator = new StackCalculator(myStack);
 			myCalculator.Push (8);
 			myCalculator.Push (3);
 			myCalculator.Subtract ();
-			Assert.AreEqual(5, myCalculator.Result());
+				Assert.AreEqual(5, myCalculator.Result());
 		}
 
 		[Test ()]
-		public void ArrayStack_and_CaluculatorCase4 ()
+		public void ArrayStack_Caluculator_Multiply ()
 		{
 			ArrayStack myStack = new ArrayStack ();
 			StackCalculator myCalculator = new StackCalculator(myStack);
@@ -76,7 +68,7 @@ namespace hw2_4
 		}
 
 		[Test ()]
-		public void ListStack_and_CaluculatorCase ()
+		public void ListStack_Caluculator_Add ()
 		{
 			ListStack myStack2 = new ListStack ();
 			StackCalculator myCalculator2 = new StackCalculator (myStack2);
@@ -87,7 +79,7 @@ namespace hw2_4
 		}
 
 		[Test ()]
-		public void ListStack_and_CaluculatorCase2 ()
+		public void ListStack_Caluculator_Subtract ()
 		{
 			ListStack myStack2 = new ListStack ();
 			StackCalculator myCalculator2 = new StackCalculator (myStack2);
@@ -98,7 +90,7 @@ namespace hw2_4
 		}
 
 		[Test ()]
-		public void ListStack_and_CaluculatorCase3 ()
+		public void ListStack_Caluculator_Divide ()
 		{
 			ListStack myStack2 = new ListStack ();
 			StackCalculator myCalculator2 = new StackCalculator (myStack2);
@@ -109,7 +101,7 @@ namespace hw2_4
 		}
 
 		[Test ()]
-		public void ListStack_and_CaluculatorCase4 ()
+		public void ListStack_Caluculator_Multiply ()
 		{
 			ListStack myStack2 = new ListStack ();
 			StackCalculator myCalculator2 = new StackCalculator (myStack2);
@@ -117,6 +109,32 @@ namespace hw2_4
 			myCalculator2.Push (2);
 			myCalculator2.Multiply ();
 			Assert.AreEqual (60, myCalculator2.Result ());
+		}
+
+		[Test ()]
+		public void LastTest_ListStackCalc()
+		{
+			ListStack myStack = new ListStack ();
+			StackCalculator myCalc = new StackCalculator (myStack);
+			myCalc.Push (int.MaxValue);
+			myCalc.Push (int.MinValue);
+			myCalc.Subtract ();
+			myCalc.Push (12);
+			myCalc.Multiply ();
+			Assert.AreEqual (-12, myCalc.Result ());
+		}
+
+		[TearDown ()]
+		public void LastTest_ArrayStackCalc()
+		{
+			ArrayStack myStack = new ArrayStack ();
+			StackCalculator myCalc = new StackCalculator (myStack);
+			myCalc.Push (int.MaxValue);
+			myCalc.Push (int.MinValue);
+			myCalc.Subtract ();
+			myCalc.Push (12);
+			myCalc.Multiply ();
+			Assert.AreEqual (-12, myCalc.Result ());
 		}
 	}
 }

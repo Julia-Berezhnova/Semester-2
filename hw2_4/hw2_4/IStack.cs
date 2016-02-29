@@ -9,7 +9,7 @@
 		/// Returns true if stack is empty, otherwise it's false
 		/// </summary>
 		/// <returns><c>true</c>, if empty was ised, <c>false</c> otherwise.</returns>
-		bool isEmpty ();
+		bool IsEmpty ();
 
 		/// <summary>
 		/// Returns true if element is added, and false if stack is going to get overloaded

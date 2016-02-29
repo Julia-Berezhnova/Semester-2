@@ -42,12 +42,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IStack.cs" />
-    <Compile Include="ICalculator.cs" />
-    <Compile Include="Calculator.cs" />
     <Compile Include="ArrayStack.cs" />
     <Compile Include="ListStack.cs" />
-    <Compile Include="AbstractStack.cs" />
-    <Compile Include="hw2_4Test.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="ArrayStackTest.cs" />
+    <Compile Include="CalculatorTest.cs" />
+    <Compile Include="ListStackTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,8 +3,12 @@
 	/// <summary>
 	/// Class stack based on array
 	/// </summary>
-	class ArrayStack: Stack
+	class ArrayStack: IStack
 	{
+		private const int maxElementsNumber = 100;
+
+		private int currentSize;
+
 		private int[] array = new int[maxElementsNumber]; 
 
 		// class constructor
@@ -12,24 +16,15 @@
 		{
 			for (int i = 0; i < maxElementsNumber; ++i)
 			{
-				this.array[i] = 0; // just in case
+				// just in case
+				this.array[i] = 0; 
 			}
-			currentSize = 0; // just in case
+			currentSize = 0;
 		}
 
-		public override bool isEmpty() 
-		{
-			if (this.currentSize == 0) 
-			{
-				return true;
-			} 
-			else 
-			{
-				return false;
-			}	
-		}
+		public bool IsEmpty() => this.currentSize == 0;
 
-		public override bool Push(int element)
+		public bool Push(int element)
 		{
 			if (currentSize < maxElementsNumber) 
 			{
@@ -43,16 +38,20 @@
 			}
 		}
 
-		public override int Pop()
+		public int Pop()
 		{
-			--currentSize;
-			return this.array[currentSize]; 
+			if (currentSize > 0) 
+			{
+				--currentSize;
+				return this.array [currentSize]; 
+			} 
+			else 
+			{
+				return int.MinValue;
+			}
 		}
 
-		public override int Top()
-		{
-			return this.array [currentSize - 1];
-		}
+		public int Top() => this.array [currentSize - 1];
 	}
 }
 
