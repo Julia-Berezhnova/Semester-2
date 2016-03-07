@@ -68,7 +68,5 @@
 			--currentSize;
 			return this.array[currentSize]; 
 		}
-
 	}
 }
-
