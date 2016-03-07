@@ -10,50 +10,20 @@
 
 		private class ListElement
 		{
-			private int value;
+            public int Value { get; set; }
 
-			private ListElement next;
+            public ListElement Next { get; set; }
 
 			public ListElement()
 			{
-				this.value = 0;
-				this.next = null;
-			}
-
-			public ListElement(int value)
-			{
-				this.value = value;
-				this.next = null;
+                Value = 0;
+                Next = null;
 			}
 
 			public ListElement(int value, ListElement next)
 			{
-				this.value = value;
-				this.next = next;
-			}
-
-			public int Value
-			{
-				get
-				{
-					return this.value;
-				}
-				set 
-				{
-					this.value = value;
-				}
-			}
-
-			public ListElement Next
-			{
-				get
-				{
-					return this.next;
-				}
-				set
-				{
-					this.next = value;
-				}
+                Value = value;
+				Next = next;
 			}
 		}
 			
@@ -61,11 +31,11 @@
 		{
 			if (this.head == null) 
 			{
-				this.head = new ListElement (element);
+                this.head = new ListElement(element, null);
 			}
 			else if (this.head.Next == null)
 			{
-				this.head.Next = new ListElement (element);
+                this.head.Next = new ListElement(element, null);
 			}	
 			else
 			{
@@ -74,7 +44,7 @@
 				{
 					temp = temp.Next;
 				}
-				temp.Next = new ListElement (element);
+                temp.Next = new ListElement(element, null);
 			}
 			++this.listSize;
 		}
@@ -83,7 +53,7 @@
 			
 		public bool DeleteElement(int element)
 		{
-			if (this.IsEmpty ()) 
+			if (this.IsEmpty()) 
 			{
 				return false;
 			}
@@ -120,4 +90,3 @@
 		}
 	}
 }
-
