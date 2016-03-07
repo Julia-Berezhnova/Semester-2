@@ -1,7 +1,8 @@
-﻿using System;
-
-namespace NamespaceHashTable
+﻿namespace NamespaceHashTable
 {
+    /// <summary>
+    /// Hash function.
+    /// </summary>
 	public class AnotherSimpleHashFunction: IHashFunction
 	{
 		public int Hash(int size, string element)
