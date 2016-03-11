@@ -47,11 +47,21 @@
 			} 
 			else 
 			{
-				return int.MinValue;
+                throw new System.Exception();
 			}
 		}
 
-		public int Top() => this.array [currentSize - 1];
+		public int Top() 
+        {
+            if (!this.IsEmpty())
+            {
+                return this.array[currentSize - 1];
+            }
+            else
+            { 
+                throw new System.Exception();
+            }
+        }
 	}
 }
 
