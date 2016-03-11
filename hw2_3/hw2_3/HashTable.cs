@@ -25,22 +25,22 @@ namespace NamespaceHashTable
 			{
 				result = result + element [i] - 'a' + 1;
 			}
-			return result / arraySize;
+            return result / arraySize;
 		}
 
 		public void AddValue(string element)
 		{
-			this.array [HashFunction (element)].AddElement(element);
+			this.array[HashFunction(element)].AddElement(element);
 		}
 
 		public bool DeleteValue(string element)
 		{
-			return this.array [HashFunction (element)].DeleteElement (element);
+			return this.array[HashFunction(element)].DeleteElement(element);
 		}
 
 		public bool Exists(string element)
 		{
-			return this.array [HashFunction (element)].IsIn (element);
+			return this.array[HashFunction(element)].IsIn(element);
 		}
 
 	}

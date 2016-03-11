@@ -11,51 +11,27 @@
 
 		private class ListElement
 		{
-			private string value;
-
-			private ListElement next;
-
 			public ListElement()
 			{
-				this.value = "";
-				this.next = null;
+                Value = "";
+                Next = null;
 			}
 
 			public ListElement(string value)
 			{
-				this.value = value;
-				this.next = null;
+                Value = value;
+                Next = null;
 			}
 
 			public ListElement(string value, ListElement next)
 			{
-				this.value = value;
-				this.next = next;
+                Value = value;
+                Next = next;
 			}
 
-			public string Value
-			{
-				get
-				{
-					return this.value;
-				}
-				set 
-				{
-					this.value = value;
-				}
-			}
+            public string Value { get; set; }
 
-			public ListElement Next
-			{
-				get
-				{
-					return this.next;
-				}
-				set
-				{
-					this.next = value;
-				}
-			}
+            public ListElement Next { get; set; }
 		}
 
 		public void AddElement(string element)
