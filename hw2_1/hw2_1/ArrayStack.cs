@@ -1,4 +1,6 @@
-﻿namespace ArrayStack
+﻿using System;
+
+namespace ArrayStack
 {
 	/// <summary>
 	/// Array stack.
@@ -62,11 +64,19 @@
 		/// <summary>
 		/// Returns the last added element, deletes it from the stack
 		/// WARNING: one should check if the stack is not empty before this operation
+        /// WARNING: if stack is empty, Pop() returns int.MinValue
 		/// </summary>
 		public int Pop()
 		{
-			--currentSize;
-			return this.array[currentSize]; 
+            if (currentSize > 0)
+            {
+                --currentSize;
+                return this.array[currentSize]; 
+            }
+            else
+            {
+                throw new Exception();
+            }
 		}
 	}
 }

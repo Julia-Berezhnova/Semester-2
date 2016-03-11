@@ -35,6 +35,13 @@ namespace ArrayStack
 			Assert.AreEqual(int.MinValue, myStack.Pop());
 		}
 
+        [ExpectedException(typeof(Exception))]
+        public void EmptyStack_PopTest()
+        {
+            ArrayStack myStack = new ArrayStack();
+            myStack.Pop();
+        }
+
 		[Test()]
 		public void IsNotEmptyTest()
 		{
