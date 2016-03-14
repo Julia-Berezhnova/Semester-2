@@ -1,5 +1,0 @@
-/home/julia/Documents/5_1/5_1/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/julia/Documents/5_1/5_1/bin/Debug/5_1.exe.mdb
-/home/julia/Documents/5_1/5_1/bin/Debug/5_1.exe
-/home/julia/Documents/5_1/5_1/obj/x86/Debug/5_1.exe
-/home/julia/Documents/5_1/5_1/obj/x86/Debug/5_1.exe.mdb
