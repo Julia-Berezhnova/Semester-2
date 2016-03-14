@@ -9,15 +9,23 @@ namespace List
     public class ValueNotFoundException: Exception
     {
         public ValueNotFoundException()
-            : base() { }
+            : base()
+        {
+        }
 
-        public ValueNotFoundException(string message) 
-            : base(message) { }
+        public ValueNotFoundException(string message)
+            : base(message)
+        {
+        }
 
-        public ValueNotFoundException(string message, Exception inner) 
-            : base(message, inner) { }
+        public ValueNotFoundException(string message, Exception inner)
+            : base(message, inner)
+        {
+        }
 
         protected ValueNotFoundException(System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context) { }
+                                         System.Runtime.Serialization.StreamingContext context)
+        {
+        }
     }
 }

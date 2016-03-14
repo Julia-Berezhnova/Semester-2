@@ -31,7 +31,7 @@ namespace List
                 ListElement temp = FindElement(element);
                 throw new RepeatedValueException();
             }
-            catch(ValueNotFoundException)
+            catch (ValueNotFoundException)
             {
                 base.AddElement(element);
             }

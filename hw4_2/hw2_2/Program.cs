@@ -2,21 +2,21 @@
 
 namespace List
 {
-	class MainClass
-	{
+    class MainClass
+    {
         /// <summary>
         /// The entry point of the program, where the program control starts and ends.
         /// </summary>
         /// <param name="args">The command-line arguments.</param>
-		public static void Main(string[] args)
-		{
-		    UniqueList ulist = new UniqueList();
+        public static void Main(string[] args)
+        {
+            UniqueList ulist = new UniqueList();
             ulist.AddElement(6);
             try
             {
                 ulist.AddElement(6);           
             }
-            catch(RepeatedValueException)
+            catch (RepeatedValueException)
             {
                 Console.WriteLine("Error 1");
             }
@@ -25,7 +25,7 @@ namespace List
             {
                 ulist.DeleteElement(8);
             }
-            catch(NonexistentElementException)
+            catch (NonexistentElementException)
             {
                 Console.WriteLine("Error 2");
             }
@@ -36,10 +36,10 @@ namespace List
             {
                 ulist.DeleteElement(8);
             }
-            catch(EmptyListException)
+            catch (EmptyListException)
             {
                 Console.Write("Error 3");
             }
-		}
-	}
+        }
+    }
 }

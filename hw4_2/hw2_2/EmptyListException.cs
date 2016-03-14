@@ -9,15 +9,23 @@ namespace List
     public class EmptyListException: Exception
     {
         public EmptyListException()
-            : base() { }
+            : base()
+        {
+        }
 
-        public EmptyListException(string message) 
-            : base(message) { }
+        public EmptyListException(string message)
+            : base(message)
+        {
+        }
 
-        public EmptyListException(string message, Exception inner) 
-            : base(message, inner) { }
+        public EmptyListException(string message, Exception inner)
+            : base(message, inner)
+        {
+        }
 
         protected EmptyListException(System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context) { }
+                                     System.Runtime.Serialization.StreamingContext context)
+        {
+        }
     }
 }

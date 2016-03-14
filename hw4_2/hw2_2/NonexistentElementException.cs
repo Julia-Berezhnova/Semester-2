@@ -9,15 +9,23 @@ namespace List
     public class NonexistentElementException: Exception
     {
         public NonexistentElementException()
-            : base() { }
+            : base()
+        {
+        }
 
-        public NonexistentElementException(string message) 
-            : base(message) { }
+        public NonexistentElementException(string message)
+            : base(message)
+        {
+        }
 
-        public NonexistentElementException(string message, Exception inner) 
-            : base(message, inner) { }
+        public NonexistentElementException(string message, Exception inner)
+            : base(message, inner)
+        {
+        }
 
         protected NonexistentElementException(System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context) { }
+                                              System.Runtime.Serialization.StreamingContext context)
+        {
+        }
     }
 }

@@ -6,14 +6,14 @@ namespace List
     /// <summary>
     /// List tests.
     /// </summary>
-	[TestFixture()]
-	public class ListTests
-	{
-		[SetUp()]
-		public void InitialTest()
-		{
-			List myList = new List();
-		}
+    [TestFixture()]
+    public class ListTests
+    {
+        [SetUp()]
+        public void InitialTest()
+        {
+            List myList = new List();
+        }
 
         [Test()]
         public void IsEmptyTest()
@@ -22,67 +22,67 @@ namespace List
             Assert.AreEqual(true, myList.IsEmpty());
         }
 
-		[Test()]
+        [Test()]
         public void IsNotEmptyTest()
-		{
-			List myList = new List();
-			myList.AddElement(123);
-			Assert.AreEqual(false, myList.IsEmpty());
-		}
+        {
+            List myList = new List();
+            myList.AddElement(123);
+            Assert.AreEqual(false, myList.IsEmpty());
+        }
 
-		[Test()]
+        [Test()]
         public void IsEmptyTest2()
-		{
-			List myList = new List();
-			myList.AddElement(123);
-			myList.AddElement(321);
-			myList.AddElement(132);
-			myList.DeleteElement(123);
-			Assert.AreEqual(false, myList.IsEmpty());
-		}
+        {
+            List myList = new List();
+            myList.AddElement(123);
+            myList.AddElement(321);
+            myList.AddElement(132);
+            myList.DeleteElement(123);
+            Assert.AreEqual(false, myList.IsEmpty());
+        }
 
-		[Test()]
+        [Test()]
         public void IsEmptyTest3()
-		{
-			List myList = new List();
-			myList.AddElement(123);
-			myList.AddElement(321);
-			myList.AddElement(132);
-			myList.DeleteElement(321);
-			myList.DeleteElement(123);
-			myList.DeleteElement(132);
-			Assert.AreEqual(true, myList.IsEmpty());
-		}
+        {
+            List myList = new List();
+            myList.AddElement(123);
+            myList.AddElement(321);
+            myList.AddElement(132);
+            myList.DeleteElement(321);
+            myList.DeleteElement(123);
+            myList.DeleteElement(132);
+            Assert.AreEqual(true, myList.IsEmpty());
+        }
 
-		[Test()]
-		public void AddElement_UpperBorderTest()
-		{
-			List myList = new List();
-			myList.AddElement(int.MaxValue);
-		}
-			
-		[Test()]
+        [Test()]
+        public void AddElement_UpperBorderTest()
+        {
+            List myList = new List();
+            myList.AddElement(int.MaxValue);
+        }
+
+        [Test()]
         public void AddElement_LowerBorderTest()
-		{
-			List myList = new List();
-			myList.AddElement(int.MinValue);
-		}
+        {
+            List myList = new List();
+            myList.AddElement(int.MinValue);
+        }
 
-		[Test()]
+        [Test()]
         public void DeleteElementTest()
-		{
-			List myList = new List();
-			myList.AddElement(8);
-			myList.DeleteElement(8);
-		}
+        {
+            List myList = new List();
+            myList.AddElement(8);
+            myList.DeleteElement(8);
+        }
 
         [ExpectedException(typeof(NonexistentElementException))]
         public void DeleteNonExistentElementTest()
-		{
-			List myList = new List();
+        {
+            List myList = new List();
             myList.AddElement(9);
-			myList.DeleteElement(8);
-		}
+            myList.DeleteElement(8);
+        }
 
         [ExpectedException(typeof(EmptyListException))]
         public void DeleteElementInEmptyListTest()

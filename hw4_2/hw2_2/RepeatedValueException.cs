@@ -9,15 +9,23 @@ namespace List
     public class RepeatedValueException: Exception
     {
         public RepeatedValueException()
-            : base() { }
+            : base()
+        {
+        }
 
-        public RepeatedValueException(string message) 
-            : base(message) { }
+        public RepeatedValueException(string message)
+            : base(message)
+        {
+        }
 
-        public RepeatedValueException(string message, Exception inner) 
-            : base(message, inner) { }
+        public RepeatedValueException(string message, Exception inner)
+            : base(message, inner)
+        {
+        }
 
         protected RepeatedValueException(System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context) { }
+                                         System.Runtime.Serialization.StreamingContext context)
+        {
+        }
     }
 }
