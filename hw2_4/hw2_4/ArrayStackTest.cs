@@ -4,109 +4,109 @@ using Stacks;
 
 namespace hw2_4
 {
-	[TestFixture()]
-	public class ArrayStackTest
-	{
-		[SetUp()]
-		public void InitialStateTest()
-		{
-			ArrayStack myList = new ArrayStack();
-		}
+    [TestFixture()]
+    public class ArrayStackTest
+    {
+        [SetUp()]
+        public void InitialStateTest()
+        {
+            ArrayStack myList = new ArrayStack();
+        }
 
-		[Test()]
+        [Test()]
         public void PushTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			Assert.AreEqual(true, myList.Push(8));
-		}
+        {
+            ArrayStack myList = new ArrayStack();
+            Assert.AreEqual(true, myList.Push(8));
+        }
 
-		[Test()]
+        [Test()]
         public void Push_BordersTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			Assert.AreEqual(true, myList.Push(int.MinValue));
-			Assert.AreEqual(true, myList.Push(int.MaxValue));
-		}	
+        {
+            ArrayStack myList = new ArrayStack();
+            Assert.AreEqual(true, myList.Push(int.MinValue));
+            Assert.AreEqual(true, myList.Push(int.MaxValue));
+        }
 
-		[Test()]
+        [Test()]
         public void DontPushTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			for (int i = 0; i < 100; i++) 
-			{
-				Assert.AreEqual(true, myList.Push(i));
-			}
-			Assert.AreEqual(false, myList.Push(100));
-		}
+        {
+            ArrayStack myList = new ArrayStack();
+            for (int i = 0; i < 100; i++)
+            {
+                Assert.AreEqual(true, myList.Push(i));
+            }
+            Assert.AreEqual(false, myList.Push(100));
+        }
 
-		[Test()]
+        [Test()]
         public void PushAndPopTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			for (int i = 0; i < 100; i++) 
-			{
-				Assert.AreEqual(true, myList.Push(i));
-			}
-			for (int i = 99; i > -1; i--) 
-			{
-				Assert.AreEqual(i, myList.Pop());
-			}
-			Assert.AreEqual(true, myList.IsEmpty());
-		}
+        {
+            ArrayStack myList = new ArrayStack();
+            for (int i = 0; i < 100; i++)
+            {
+                Assert.AreEqual(true, myList.Push(i));
+            }
+            for (int i = 99; i > -1; i--)
+            {
+                Assert.AreEqual(i, myList.Pop());
+            }
+            Assert.AreEqual(true, myList.IsEmpty());
+        }
 
-		[Test()]
+        [Test()]
         public void IsNotEmptyTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			myList.Push(123);
-			Assert.AreEqual(false, myList.IsEmpty());
-		}
+        {
+            ArrayStack myList = new ArrayStack();
+            myList.Push(123);
+            Assert.AreEqual(false, myList.IsEmpty());
+        }
 
-		[Test()]
+        [Test()]
         public void IsEmptyTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			myList.Push(123);
-			myList.Pop();
-			Assert.AreEqual(true, myList.IsEmpty());
-			Assert.AreEqual(true, myList.IsEmpty());
-		}
+        {
+            ArrayStack myList = new ArrayStack();
+            myList.Push(123);
+            myList.Pop();
+            Assert.AreEqual(true, myList.IsEmpty());
+            Assert.AreEqual(true, myList.IsEmpty());
+        }
 
-		[Test()]
+        [Test()]
         public void PopTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			myList.Push(123456);
-			Assert.AreEqual(123456, myList.Pop());
-		}
+        {
+            ArrayStack myList = new ArrayStack();
+            myList.Push(123456);
+            Assert.AreEqual(123456, myList.Pop());
+        }
 
-		[Test()]
+        [Test()]
         public void PopTest2()
-		{
-			ArrayStack myList = new ArrayStack();
-			myList.Push(123);
-			myList.Push(321);
-			myList.Push(132);
-			Assert.AreEqual(132, myList.Pop());
-			Assert.AreEqual(321, myList.Pop());
-			Assert.AreEqual(123, myList.Pop());
-		}
+        {
+            ArrayStack myList = new ArrayStack();
+            myList.Push(123);
+            myList.Push(321);
+            myList.Push(132);
+            Assert.AreEqual(132, myList.Pop());
+            Assert.AreEqual(321, myList.Pop());
+            Assert.AreEqual(123, myList.Pop());
+        }
 
-		[Test()]
+        [Test()]
         public void Pop_UpperBorderTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			myList.Push(int.MaxValue);
-			Assert.AreEqual(int.MaxValue, myList.Pop());
-		}
+        {
+            ArrayStack myList = new ArrayStack();
+            myList.Push(int.MaxValue);
+            Assert.AreEqual(int.MaxValue, myList.Pop());
+        }
 
-		[Test()]
+        [Test()]
         public void Pop_LowerBorderTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			myList.Push(int.MinValue);
-			Assert.AreEqual(int.MinValue, myList.Pop());
-		}
+        {
+            ArrayStack myList = new ArrayStack();
+            myList.Push(int.MinValue);
+            Assert.AreEqual(int.MinValue, myList.Pop());
+        }
 
         [ExpectedException(typeof(Exception))]
         public void PopExceptionTest()
@@ -115,48 +115,48 @@ namespace hw2_4
             myList.Pop();
         }
 
-		[Test()]
+        [Test()]
         public void TopTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			myList.Push(12);
-			Assert.AreEqual (12, myList.Top());
-		}
+        {
+            ArrayStack myList = new ArrayStack();
+            myList.Push(12);
+            Assert.AreEqual(12, myList.Top());
+        }
 
         [ExpectedException(typeof(Exception))]
         public void TopExceptionTest()
-		{
-			ArrayStack myList = new ArrayStack();
+        {
+            ArrayStack myList = new ArrayStack();
             myList.Top();
-		}
+        }
 
-		[Test()]
+        [Test()]
         public void TopAndPopTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			myList.Push(123);
-			Assert.AreEqual(123, myList.Top());
-			myList.Pop();
-			Assert.AreEqual(true, myList.IsEmpty());
-		}
+        {
+            ArrayStack myList = new ArrayStack();
+            myList.Push(123);
+            Assert.AreEqual(123, myList.Top());
+            myList.Pop();
+            Assert.AreEqual(true, myList.IsEmpty());
+        }
 
         [ExpectedException(typeof(Exception))]
-		public void LastTest()
-		{
-			ArrayStack myList = new ArrayStack();
-			myList.Push(0);
-			myList.Push(1);
-			Assert.AreEqual(1, myList.Pop());
-			myList.Push(2);
-			myList.Push(3);
-			myList.Push(2);
-			Assert.AreEqual(2, myList.Pop());
-			Assert.AreEqual(3, myList.Pop());
-			Assert.AreEqual(2, myList.Pop());
-			Assert.AreEqual(0, myList.Pop());
-			Assert.AreEqual(true, myList.IsEmpty());
+        public void LastTest()
+        {
+            ArrayStack myList = new ArrayStack();
+            myList.Push(0);
+            myList.Push(1);
+            Assert.AreEqual(1, myList.Pop());
+            myList.Push(2);
+            myList.Push(3);
+            myList.Push(2);
+            Assert.AreEqual(2, myList.Pop());
+            Assert.AreEqual(3, myList.Pop());
+            Assert.AreEqual(2, myList.Pop());
+            Assert.AreEqual(0, myList.Pop());
+            Assert.AreEqual(true, myList.IsEmpty());
             myList.Pop();
-		}
-	}
+        }
+    }
 }
 
