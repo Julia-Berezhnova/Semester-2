@@ -12,7 +12,7 @@ namespace _4
             }
             catch (ArgumentOutOfRangeException)
             {
-                Console.CursorLeft = Console.BufferWidth;   
+                Console.CursorLeft = Console.BufferWidth - 1;   
             }
         }
 
