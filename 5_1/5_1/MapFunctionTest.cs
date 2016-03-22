@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace _1
 {
+    /// <summary>
+    /// Map function test.
+    /// </summary>
     [TestFixture()]
     public class MapFunctionTest
     {
@@ -11,7 +14,6 @@ namespace _1
         public void InitialTest()
         {
             Map myMap = new Map();
-            List<int> myList = new List<int>();
         }
 
         [Test()]
