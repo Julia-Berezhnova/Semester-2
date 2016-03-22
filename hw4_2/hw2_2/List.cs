@@ -27,6 +27,23 @@
             }
         }
 
+        public bool FindElement(int element)
+        {
+            if (!this.IsEmpty())
+            {
+                ListElement temp = this.head;
+                while (temp != null)
+                {
+                    if (temp.Value == element)
+                    {
+                        return true;
+                    }
+                    temp = temp.Next;
+                }
+            }
+            return false;
+        }
+
         public virtual void AddElement(int element)
         {
             if (this.head == null)

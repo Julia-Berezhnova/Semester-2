@@ -15,6 +15,7 @@ namespace List
             UniqueList myList = new UniqueList();
         }
 
+        [Test()]
         [ExpectedException(typeof(RepeatedValueException))]
         public void AddExistentElementTest()
         {
@@ -85,6 +86,7 @@ namespace List
             myList.DeleteElement(8);
         }
 
+        [Test()]
         [ExpectedException(typeof(NonexistentElementException))]
         public void DeleteNonExistentElementTest()
         {
@@ -93,6 +95,7 @@ namespace List
             myList.DeleteElement(8);
         }
 
+        [Test()]
         [ExpectedException(typeof(EmptyListException))]
         public void DeleteElementInEmptyListTest()
         {

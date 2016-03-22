@@ -76,6 +76,7 @@ namespace List
             myList.DeleteElement(8);
         }
 
+        [Test()]
         [ExpectedException(typeof(NonexistentElementException))]
         public void DeleteNonExistentElementTest()
         {
@@ -84,13 +85,13 @@ namespace List
             myList.DeleteElement(8);
         }
 
+        [Test()]
         [ExpectedException(typeof(EmptyListException))]
         public void DeleteElementInEmptyListTest()
         {
             List myList = new List();
             myList.DeleteElement(8);
         }
-
     }
 }
 

@@ -42,7 +42,6 @@
     <Compile Include="IList.cs" />
     <Compile Include="UniqueList.cs" />
     <Compile Include="RepeatedValueException.cs" />
-    <Compile Include="ValueNotFoundException.cs" />
     <Compile Include="NonexistentElementException.cs" />
     <Compile Include="EmptyListException.cs" />
     <Compile Include="ListTests.cs" />

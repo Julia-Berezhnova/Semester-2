@@ -22,6 +22,13 @@
         /// </summary>
         /// <param name="element">Value to delete.</param>
         void DeleteElement(int element);
+
+        /// <summary>
+        /// Finds the element.
+        /// </summary>
+        /// <returns><c>true</c>, if element was found, <c>false</c> otherwise.</returns>
+        /// <param name="element">Element to find.</param>
+        bool FindElement(int element);
     }
 }
 
