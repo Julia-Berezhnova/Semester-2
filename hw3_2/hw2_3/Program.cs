@@ -44,21 +44,24 @@ namespace hw2_3
                     break;
                 }
             }	
+            IHashFunction myHashFunction;
             switch (hashFunction)
             {
                 case 1:
-                    myHashTable = new HashTable(hashTableSize, new SimpleHashFunction());
+                    myHashFunction = new SimpleHashFunction();
                     break;
                 case 2:
-                    myHashTable = new HashTable(hashTableSize, new HashFunction37());
+                    myHashFunction = new HashFunction37();
                     break;
                 case 3:
-                    myHashTable = new HashTable(hashTableSize, new SimpleHashFunction());
+                    myHashFunction = new SimpleHashFunction();
                     break;
                 default:
-                    myHashTable = new HashTable(hashTableSize, new AnotherSimpleHashFunction());
+                    myHashFunction = new AnotherSimpleHashFunction();
                     break;
             }
+
+            myHashTable = new HashTable(hashTableSize, myHashFunction);
 
             bool goOn = true;
             while (goOn)
