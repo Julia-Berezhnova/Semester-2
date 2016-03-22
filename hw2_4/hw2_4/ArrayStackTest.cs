@@ -17,26 +17,27 @@ namespace hw2_4
         public void PushTest()
         {
             ArrayStack myList = new ArrayStack();
-            Assert.AreEqual(true, myList.Push(8));
+            myList.Push(8);
         }
 
         [Test()]
         public void Push_BordersTest()
         {
             ArrayStack myList = new ArrayStack();
-            Assert.AreEqual(true, myList.Push(int.MinValue));
-            Assert.AreEqual(true, myList.Push(int.MaxValue));
+            myList.Push(int.MinValue);
+            myList.Push(int.MaxValue);
         }
 
         [Test()]
+        [ExpectedException(typeof(StackOverloadedException))]
         public void DontPushTest()
         {
             ArrayStack myList = new ArrayStack();
             for (int i = 0; i < 100; i++)
             {
-                Assert.AreEqual(true, myList.Push(i));
+                myList.Push(i);
             }
-            Assert.AreEqual(false, myList.Push(100));
+            myList.Push(100);
         }
 
         [Test()]
@@ -45,7 +46,7 @@ namespace hw2_4
             ArrayStack myList = new ArrayStack();
             for (int i = 0; i < 100; i++)
             {
-                Assert.AreEqual(true, myList.Push(i));
+                myList.Push(i);
             }
             for (int i = 99; i > -1; i--)
             {
@@ -108,7 +109,8 @@ namespace hw2_4
             Assert.AreEqual(int.MinValue, myList.Pop());
         }
 
-        [ExpectedException(typeof(Exception))]
+        [Test()]
+        [ExpectedException(typeof(StackEmptyException))]
         public void PopExceptionTest()
         {
             ArrayStack myList = new ArrayStack();
@@ -123,7 +125,7 @@ namespace hw2_4
             Assert.AreEqual(12, myList.Top());
         }
 
-        [ExpectedException(typeof(Exception))]
+        [ExpectedException(typeof(StackEmptyException))]
         public void TopExceptionTest()
         {
             ArrayStack myList = new ArrayStack();
@@ -140,7 +142,8 @@ namespace hw2_4
             Assert.AreEqual(true, myList.IsEmpty());
         }
 
-        [ExpectedException(typeof(Exception))]
+        [Test()]
+        [ExpectedException(typeof(StackEmptyException))]
         public void LastTest()
         {
             ArrayStack myList = new ArrayStack();

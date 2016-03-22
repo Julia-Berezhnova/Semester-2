@@ -24,17 +24,16 @@
 
         public bool IsEmpty() => this.currentSize == 0;
 
-        public bool Push(int element)
+        public void Push(int element)
         {
             if (currentSize < maxElementsNumber)
             {
                 this.array[currentSize] = element;
-                ++currentSize;
-                return true;
+                ++currentSize;               
             }
             else
             {
-                return false;
+                throw new StackOverloadedException();
             }
         }
 
@@ -47,7 +46,7 @@
             }
             else
             {
-                throw new System.Exception();
+                throw new StackEmptyException();
             }
         }
 
@@ -59,7 +58,7 @@
             }
             else
             { 
-                throw new System.Exception();
+                throw new StackEmptyException();
             }
         }
     }

@@ -11,22 +11,21 @@ namespace hw2_4
         public void InitialState()
         {
             ListStack myList = new ListStack();
-            Assert.AreEqual(true, myList.IsEmpty());
         }
 
         [Test()]
         public void Push()
         {
             ListStack myList = new ListStack();
-            Assert.AreEqual(true, myList.Push(8));
+            myList.Push(8);
         }
 
         [Test()]
         public void Push_Borders()
         {
             ListStack myList = new ListStack();
-            Assert.AreEqual(true, myList.Push(int.MinValue));
-            Assert.AreEqual(true, myList.Push(int.MaxValue));
+            myList.Push(int.MinValue);
+            myList.Push(int.MaxValue);
         }
 
         [Test()]
@@ -110,7 +109,22 @@ namespace hw2_4
             Assert.AreEqual(true, myList.IsEmpty());
         }
 
-        [TearDown()]
+        [ExpectedException(typeof(StackEmptyException))]
+        public void TopExceptionTest()
+        {
+            ArrayStack myList = new ArrayStack();
+            myList.Top();
+        }
+
+        [Test()]
+        [ExpectedException(typeof(StackEmptyException))]
+        public void PopExceptionTest()
+        {
+            ArrayStack myList = new ArrayStack();
+            myList.Pop();
+        }
+
+        [Test()]
         public void LastTest()
         {
             ListStack myList = new ListStack();
@@ -125,7 +139,6 @@ namespace hw2_4
             Assert.AreEqual(2, myList.Pop());
             Assert.AreEqual(0, myList.Pop());
             Assert.AreEqual(true, myList.IsEmpty());
-            Assert.AreEqual(int.MinValue, myList.Pop());
         }
     }
 }

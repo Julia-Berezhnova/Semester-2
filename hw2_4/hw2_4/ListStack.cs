@@ -52,12 +52,11 @@
             }
         }
 
-        public bool Push(int element)
+        public void Push(int element)
         {
             ListElement newElement = new ListElement(element, this.head);
             this.head = newElement;
             ++this.currentSize;
-            return true;
         }
 
         public bool IsEmpty() => this.head == null;
@@ -72,10 +71,20 @@
             }
             else
             {
-                return int.MinValue;
+                throw new StackEmptyException();
             }
         }
 
-        public int Top() => this.head.Value;
+        public int Top()
+        {
+            if (!this.IsEmpty())
+            {
+                return this.head.Value;
+            }
+            else
+            { 
+                throw new StackEmptyException();
+            }
+        }
     }
 }

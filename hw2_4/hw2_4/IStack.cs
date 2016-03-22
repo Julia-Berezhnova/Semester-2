@@ -15,7 +15,7 @@
         /// Returns true if element is added, and false if stack is going to get overloaded
         /// </summary>
         /// <param name="element">Element needed to be added to the stack.</param>
-        bool Push(int element);
+        void Push(int element);
 
         /// <summary>
         /// returns the last added element, deletes it from the stack

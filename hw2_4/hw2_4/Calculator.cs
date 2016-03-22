@@ -40,9 +40,9 @@
             this.stack.Push(second / first);
         }
 
-        public bool Push(int value)
+        public void Push(int value)
         {
-            return this.stack.Push(value);
+            this.stack.Push(value);
         }
 
         public int Result()

@@ -48,6 +48,8 @@
     <Compile Include="ArrayStackTest.cs" />
     <Compile Include="CalculatorTest.cs" />
     <Compile Include="ListStackTest.cs" />
+    <Compile Include="StackOverloadedException.cs" />
+    <Compile Include="StackEmptyException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
