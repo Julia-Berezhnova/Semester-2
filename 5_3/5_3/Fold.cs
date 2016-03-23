@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace _3
 {
-    delegate int Function(int acc, int elem);
-
     class Fold
     {
-        public int FoldFunction(List<int> list, int initialValue, Function function)
+        public static int FoldFunction(List<int> list, int initialValue, Func<int, int, int> function)
         {
             int result = initialValue;
             foreach (int element in list)
