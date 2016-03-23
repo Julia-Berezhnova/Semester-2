@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace _2
 {
-    delegate bool Function(int element);
-
     class Filter
     {
-        public List<int> FilterFunction(List<int> list, Function function)
+        public static List<int> FilterFunction(List<int> list, Func<int, bool> function)
         {
             List<int> result = new List<int>();
             foreach (int element in list)
