@@ -2,37 +2,15 @@
 
 namespace _4
 {
-    public delegate void ArrowHandler();
-
     class EventLoop
     {
-        private ArrowHandler leftHandler;
+        public event EventHandler<EventArgs> LeftHandler = (sender, args) => { };
 
-        private ArrowHandler rightHandler;
+        public event EventHandler<EventArgs> RightHandler = (sender, args) => { };
 
-        private ArrowHandler upHandler;
+        public event EventHandler<EventArgs> UpHandler = (sender, args) => { };
 
-        private ArrowHandler downHandler;
-
-        public void RegisterLeftHandler(ArrowHandler left)
-        {
-            leftHandler += left;
-        }
-
-        public void RegisterRightHandler(ArrowHandler right)
-        {
-            rightHandler += right;
-        }
-
-        public void RegisterUpHandler(ArrowHandler up)
-        {
-            upHandler += up;
-        }
-
-        public void RegisterDownHandler(ArrowHandler down)
-        {
-            downHandler += down;
-        }
+        public event EventHandler<EventArgs> DownHandler = (sender, args) => { };
 
         public void Run()
         {
@@ -42,20 +20,16 @@ namespace _4
                 switch (key.Key)
                 {
                     case ConsoleKey.LeftArrow:
-                        if (leftHandler != null)
-                            leftHandler();
+                        LeftHandler(this, EventArgs.Empty);
                         break;
                     case ConsoleKey.RightArrow:
-                        if (rightHandler != null)
-                            rightHandler();
+                        RightHandler(this, EventArgs.Empty);
                         break;
                     case ConsoleKey.UpArrow:
-                        if (upHandler != null)
-                            upHandler();
+                        UpHandler(this, EventArgs.Empty);
                         break;
                     case ConsoleKey.DownArrow:
-                        if (downHandler != null)
-                            downHandler();
+                        DownHandler(this, EventArgs.Empty);
                         break;
                 }
             }
