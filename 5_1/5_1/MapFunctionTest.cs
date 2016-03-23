@@ -10,44 +10,44 @@ namespace _1
     [TestFixture()]
     public class MapFunctionTest
     {
-        [SetUp()]
-        public void InitialTest()
+        [Test()]
+        public void OriginalListDoesntChangeTest()
         {
-            Map myMap = new Map();
+            List<int> myList = new List<int>();
+            myList.Insert(0, 5);
+            Map.MapFunction(myList, x => x * x);
+            Assert.AreEqual(5, (myList[0]));
         }
 
         [Test()]
         public void SquareTest()
         {
-            Map myMap = new Map();
             List<int> myList = new List<int>();
             myList.Insert(0, 5);
-            myList = myMap.MapFunction(myList, x => x * x);
-            Assert.AreEqual(25, (myList[0]));
+            List<int> changedList = Map.MapFunction(myList, x => x * x);
+            Assert.AreEqual(25, (changedList[0]));
         }
 
         [Test()]
         public void CubeTest()
         {
-            Map myMap = new Map();
             List<int> myList = new List<int>();
             myList.Insert(0, 5);
-            myList = myMap.MapFunction(myList, x => x * x * x);
-            Assert.AreEqual(125, myList[0]);
+            List<int> changedList = Map.MapFunction(myList, x => x * x * x);
+            Assert.AreEqual(125, changedList[0]);
         }
 
         [Test()]
         public void DoubleTest()
         {
-            Map myMap = new Map();
             List<int> myList = new List<int>();
             myList.Insert(0, 1);
             myList.Insert(1, 2);
             myList.Insert(2, 3);
-            myList = myMap.MapFunction(myList, x => x * 2);
-            Assert.AreEqual(2, myList[0]);
-            Assert.AreEqual(4, myList[1]);
-            Assert.AreEqual(6, myList[2]);
+            List<int> changedList = Map.MapFunction(myList, x => x * 2);
+            Assert.AreEqual(2, changedList[0]);
+            Assert.AreEqual(4, changedList[1]);
+            Assert.AreEqual(6, changedList[2]);
         }
     }
 }

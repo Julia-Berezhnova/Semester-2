@@ -8,7 +8,7 @@ namespace _1
     /// </summary>
     public class Map
     {
-        public List<int> MapFunction(List<int> list, Func<int,int> function)
+        public static List<int> MapFunction(List<int> list, Func<int,int> function)
         {
             List<int> newList = new List<int>();
             for (int i = 0; i < list.Count; ++i)

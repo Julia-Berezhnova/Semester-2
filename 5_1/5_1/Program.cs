@@ -11,12 +11,11 @@ namespace _1
         /// <param name="args">The command-line arguments.</param>
         public static void Main(string[] args)
         {
-            Map myMap = new Map();
             List<int> myList = new List<int>();
             myList.Insert(0, 1);
             myList.Insert(1, 2);
             myList.Insert(2, 3);
-            List<int> changedList = myMap.MapFunction(myList, x => x * 2);
+            List<int> changedList = Map.MapFunction(myList, x => x * 2);
             foreach (int element in changedList)
             {
                 Console.WriteLine(element);
