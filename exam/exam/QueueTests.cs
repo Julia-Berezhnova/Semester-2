@@ -117,6 +117,18 @@ namespace exam
             Assert.AreEqual(2, myQ.Dequeue());
             Assert.AreEqual(3, myQ.Dequeue());
         }
+
+        [Test()]
+        public void LastTest()
+        {
+            Queue myQ = new Queue();
+            myQ.Enqueue(3, 1);
+            myQ.Enqueue(2, 2);
+            myQ.Enqueue(1, 3);
+            Assert.AreEqual(1, myQ.Dequeue());
+            Assert.AreEqual(2, myQ.Dequeue());
+            Assert.AreEqual(3, myQ.Dequeue());
+        }
     }
 }
 
