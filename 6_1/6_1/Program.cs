@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace _1
+namespace task1
 {
     class MainClass
     {
