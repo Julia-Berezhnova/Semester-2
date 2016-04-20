@@ -5,7 +5,6 @@
     /// </summary>
     class List: IList
     {
-        protected int listSize = 0;
         protected ListElement head = null;
 
         protected class ListElement
@@ -27,7 +26,7 @@
             }
         }
 
-        public bool FindElement(int element)
+        public bool Contains(int element)
         {
             if (!this.IsEmpty())
             {
@@ -55,7 +54,6 @@
                 ListElement temp = new ListElement(element, this.head);
                 this.head = temp;
             }
-            ++this.listSize;
         }
 
         public bool IsEmpty() =>  this.head == null;

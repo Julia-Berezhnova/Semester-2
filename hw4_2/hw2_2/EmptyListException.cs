@@ -6,7 +6,7 @@ namespace List
     /// Exception which is thrown if user wants to delete an element from empty list
     /// </summary>
     [Serializable()]
-    public class EmptyListException: Exception
+    public class EmptyListException: ApplicationException
     {
         public EmptyListException()
             : base()

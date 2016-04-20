@@ -24,11 +24,11 @@
         void DeleteElement(int element);
 
         /// <summary>
-        /// Finds the element.
+        /// Checks if list contains the element.
         /// </summary>
         /// <returns><c>true</c>, if element was found, <c>false</c> otherwise.</returns>
-        /// <param name="element">Element to find.</param>
-        bool FindElement(int element);
+        /// <param name="element">Element to check.</param>
+        bool Contains(int element);
     }
 }
 

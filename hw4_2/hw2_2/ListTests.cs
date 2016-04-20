@@ -9,12 +9,6 @@ namespace List
     [TestFixture()]
     public class ListTests
     {
-        [SetUp()]
-        public void InitialTest()
-        {
-            List myList = new List();
-        }
-
         [Test()]
         public void IsEmptyTest()
         {

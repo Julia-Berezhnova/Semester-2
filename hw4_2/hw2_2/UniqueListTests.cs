@@ -9,12 +9,6 @@ namespace List
     [TestFixture()]
     public class UniqueListTests
     {
-        [SetUp()]
-        public void InitialTest()
-        {
-            UniqueList myList = new UniqueList();
-        }
-
         [Test()]
         [ExpectedException(typeof(RepeatedValueException))]
         public void AddExistentElementTest()
