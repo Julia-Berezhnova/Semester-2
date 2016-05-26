@@ -2,6 +2,9 @@
 
 namespace NamespaceTree
 {
+    /// <summary>
+    /// Class DivisionOperator inherited by class Operator
+    /// </summary>
     class DivisionOperator: Operator
     {
         public override void Print(ref string result)

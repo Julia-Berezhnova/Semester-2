@@ -2,6 +2,9 @@
 
 namespace NamespaceTree
 {
+    /// <summary>
+    /// Class AdditionOperator inherited by class Operator
+    /// </summary>
     class AdditionOperator: Operator
     {
         public override void Print(ref string result)

@@ -2,8 +2,13 @@
 
 namespace NamespaceTree
 {
+    /// <summary>
+    /// Exception which is thrown when
+    /// something in an expression is wrong
+    /// (see ParseTree.ParseTree(string expression))
+    /// </summary>
     [Serializable()]
-    public class UnexpectedSymbolException : Exception
+    public class UnexpectedSymbolException : ApplicationException
     {
         public UnexpectedSymbolException() 
             : base() { }
@@ -15,7 +20,8 @@ namespace NamespaceTree
             : base(message, inner) { }
 
         protected UnexpectedSymbolException(System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context) { }
+            System.Runtime.Serialization.StreamingContext context) 
+            : base() { }
     } 
 }
 

@@ -4,6 +4,9 @@ using NamespaceTree;
 
 namespace hw4_1
 {
+    /// <summary>
+    /// ParsTree class tests.
+    /// </summary>
     [TestFixture()]
     public class ParseTreeTests
     {

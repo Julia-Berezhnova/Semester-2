@@ -1,9 +1,21 @@
 ﻿using System;
 namespace NamespaceTree
 {
+    /// <summary>
+    /// Parse tree.
+    /// </summary>
     public class ParseTree
     {
-        Operator root;
+        private Operator root;
+
+        public string PrintTree()
+        {
+            string result = "";
+            root.Print(ref result);
+            return result;
+        }
+
+        public int CountTree() => root.Count();
 
         public ParseTree(string expression)
         {
@@ -14,15 +26,8 @@ namespace NamespaceTree
                 {
                     if (i == expression.Length - 1)
                         throw new UnexpectedSymbolException("Opening bracket at the end of expression.");
-                   // try
-                    //{
                         AddOperator(expression[i + 1]);
                         ++i;
-                    //}
-                    //catch(UnexpectedSymbolException e)
-                    //{
-                   //     Console.WriteLine(e.Message);
-                    //}
                 }
                 else if (expression[i] != ')' && expression[i] != ' ')
                 {
@@ -112,15 +117,6 @@ namespace NamespaceTree
                 }
             }
         } 
-
-        public string PrintTree()
-        {
-            string result = "";
-            root.Print(ref result);
-            return result;
-        }
-
-        public int CountTree() => root.Count();
     }
 }
 
