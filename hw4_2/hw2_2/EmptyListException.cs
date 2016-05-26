@@ -25,6 +25,7 @@ namespace List
 
         protected EmptyListException(System.Runtime.Serialization.SerializationInfo info,
                                      System.Runtime.Serialization.StreamingContext context)
+            : base()
         {
         }
     }

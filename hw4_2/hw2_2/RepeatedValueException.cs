@@ -25,6 +25,7 @@ namespace List
 
         protected RepeatedValueException(System.Runtime.Serialization.SerializationInfo info,
                                          System.Runtime.Serialization.StreamingContext context)
+            : base()
         {
         }
     }
