@@ -19,7 +19,8 @@ namespace task1
             : base(message, inner) { }
 
         protected EmptyListException(System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context) { }
+            System.Runtime.Serialization.StreamingContext context) 
+            : base() { }
     }
 }
 

@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
+using System.Collections;
+using System;
 
 namespace task1
 {
     /// <summary>
     /// List template enumerable class.
     /// </summary>
-    class List<T>: IEnumerable
+    class List<T>: IEnumerable<T>
     {
         public bool Contains(T element)
         {
@@ -77,17 +79,14 @@ namespace task1
             throw new NonexistentElementException();
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
-            return (IEnumerator)GetEnumerator();
+            return (IEnumerator<T>)GetEnumerator();
         }
 
-        public ListEnum GetEnumerator()
-        {
-            return new ListEnum(this);
-        }
+        public IEnumerator GetEnumerator() => new ListEnum(this);
 
-        public class ListEnum: IEnumerator
+        public class ListEnum: IEnumerator<T>
         {
             public ListEnum(List<T> list)
             {
@@ -125,6 +124,8 @@ namespace task1
                     return Current;
                 }
             }
+
+            void IDisposable.Dispose() { }
 
             public T Current
             {

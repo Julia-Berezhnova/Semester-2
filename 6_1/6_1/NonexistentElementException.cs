@@ -19,7 +19,8 @@ namespace task1
             : base(message, inner) { }
 
         protected NonexistentElementException(System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context) { }
+            System.Runtime.Serialization.StreamingContext context) 
+            : base() { }
     }
 }
 
