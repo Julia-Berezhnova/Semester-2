@@ -12,10 +12,10 @@ namespace hw6_1
             bool isNegative = false;
 
             if (expression[0] == '-')
-                {
-                    isNegative = true;
-                    ++i;
-                }
+            {
+                isNegative = true;
+                ++i;
+            }
 
             while (expression[i] >= '0' && expression[i] <= '9')
             {
@@ -36,7 +36,7 @@ namespace hw6_1
                 firstNumber = 0 - firstNumber;
             }
 
-            int OperationPlace = i;
+            int operationPlace = i;
             ++i;
             int secondNumber = 0;
 
@@ -49,7 +49,7 @@ namespace hw6_1
             var calc = new StackCalculator(new Stack());
             calc.Push(firstNumber);
             calc.Push(secondNumber);
-            switch (expression[OperationPlace])
+            switch (expression[operationPlace])
             {
                 case '/':
                     calc.Divide();
