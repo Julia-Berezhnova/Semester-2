@@ -11,8 +11,10 @@
     <property name="MemberName" />
     <property name="Title" translatable="yes">ClockWidget</property>
     <property name="WindowPosition">Mouse</property>
-    <property name="DefaultWidth">200</property>
-    <property name="DefaultHeight">30</property>
+    <property name="Resizable">False</property>
+    <property name="AllowGrow">False</property>
+    <property name="DefaultWidth">500</property>
+    <property name="DefaultHeight">400</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
       <widget class="Gtk.Table" id="table1">

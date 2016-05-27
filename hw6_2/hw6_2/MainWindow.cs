@@ -23,6 +23,6 @@ public partial class MainWindow: Gtk.Window
 
     protected void SetTime(object sender, EventArgs e)
     {
-        timeLabel.Text = DateTime.Now.ToShortTimeString();
+        timeLabel.Text = DateTime.Now.ToString();
     }
 }

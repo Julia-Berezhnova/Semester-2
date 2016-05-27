@@ -14,8 +14,10 @@ public partial class MainWindow
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("ClockWidget");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(2));
-		this.DefaultWidth = 200;
-		this.DefaultHeight = 30;
+		this.Resizable = false;
+		this.AllowGrow = false;
+		this.DefaultWidth = 500;
+		this.DefaultHeight = 400;
 		// Container child MainWindow.Gtk.Container+ContainerChild
 		this.table1 = new global::Gtk.Table (((uint)(1)), ((uint)(1)), false);
 		this.table1.Name = "table1";
