@@ -3,17 +3,14 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace hw11
 {
+    /// <summary>
+    /// A separate record in a phone book -- a document in data base.
+    /// </summary>
     [BsonIgnoreExtraElements]
     public class PhoneBookRecord
     {        
         public string Name { get; set; }
 
         public string Phone { get; set; }
-    }
-
-    [BsonIgnoreExtraElements]
-    public class PhoneBook
-    {
-        public List<PhoneBookRecord> Book { get; set; } = new List<PhoneBookRecord>();
     }
 }

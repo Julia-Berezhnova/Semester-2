@@ -7,8 +7,16 @@ namespace hw11
 {
     class MainClass
     {
+        /// <summary>
+        /// The entry point of the program, where the program control starts and ends.
+        /// </summary>
+        /// <param name="args">The command-line arguments.</param>
         public static void Main(string[] args)
         {
+            var client = new MongoClient("mongodb://localhost:27017");
+            var database = client.GetDatabase("homework");
+            var collection = database.GetCollection<PhoneBookRecord>("phonebook");
+
             Console.WriteLine("Welcome to the PhoneBook.NET");
             bool goOn = true;
             while (goOn)
@@ -30,13 +38,13 @@ namespace hw11
                         goOn = false;
                         break;
                     case 1:
-                        SaveRecord().GetAwaiter().GetResult();
+                        SaveRecord(collection).GetAwaiter().GetResult();
                         break;
                     case 2:
-                        FindPhone().GetAwaiter().GetResult();
+                        FindPhone(collection).GetAwaiter().GetResult();
                         break;
                     case 3:
-                        FindName().GetAwaiter().GetResult();
+                        FindName(collection).GetAwaiter().GetResult();
                         break;
                     default:
                         Console.WriteLine("Wrong input. Enter a number from 0 to 3.");
@@ -45,12 +53,13 @@ namespace hw11
             }
         }
 
-        private static async Task SaveRecord()
+        /// <summary>
+        /// Saves a record to database.
+        /// </summary>
+        /// <returns>The record.</returns>
+        /// <param name="collection">Collection.</param>
+        private static async Task SaveRecord(IMongoCollection<PhoneBookRecord> collection)
         {
-            var client = new MongoClient("mongodb://localhost:27017");
-            var database = client.GetDatabase("homework");
-            var collection = database.GetCollection<PhoneBookRecord>("phonebook");
-
             Console.WriteLine("Enter a name:");
             string name = Console.ReadLine();
             Console.WriteLine("Enter a phone:");
@@ -61,12 +70,13 @@ namespace hw11
             await collection.InsertOneAsync(record);
         }
 
-        private static async Task FindPhone()
+        /// <summary>
+        /// Finds phones in database using a name.
+        /// </summary>
+        /// <returns>The phone.</returns>
+        /// <param name="collection">Collection.</param>
+        private static async Task FindPhone(IMongoCollection<PhoneBookRecord> collection)
         {
-            var client = new MongoClient("mongodb://localhost:27017");
-            var database = client.GetDatabase("homework");
-            var collection = database.GetCollection<PhoneBookRecord>("phonebook");
-
             Console.WriteLine("Enter a name");
             string name = Console.ReadLine();
             var filter = Builders<PhoneBookRecord>.Filter.Eq("Name", name);
@@ -78,12 +88,13 @@ namespace hw11
 
         }
 
-        private static async Task FindName()
+        /// <summary>
+        /// Finds names in database using a phone.
+        /// </summary>
+        /// <returns>The name.</returns>
+        /// <param name="collection">Collection.</param>
+        private static async Task FindName(IMongoCollection<PhoneBookRecord> collection)
         {
-            var client = new MongoClient("mongodb://localhost:27017");
-            var database = client.GetDatabase("homework");
-            var collection = database.GetCollection<PhoneBookRecord>("phonebook");
-
             Console.WriteLine("Enter a phone");
             string phone = Console.ReadLine();
             var filter = Builders<PhoneBookRecord>.Filter.Eq("Phone", phone);
